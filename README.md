@@ -23,10 +23,10 @@ Este proyecto es una versión web del clásico **Juego del Ahorcado**, desarroll
 | Spring Boot    | CSS3         | VS Code         |
 | Maven          | JavaScript   | Postman (opcional) |
 
----
+
 
 ## 📁 Estructura del proyecto
-
+<pre>
 juego-ahorcado/
 ├── src/
 │ ├── main/
@@ -40,25 +40,22 @@ juego-ahorcado/
 │ │ │ ├── index.html
 │ │ │ └── style.css
 │ │ └── application.properties
+</pre>
 
----
 
 ## 🛠️ Cómo ejecutar el proyecto
 
-### 1. Clona el repositorio
+ 1. Clona el repositorio git clone https://github.com/tuusuario/juego-ahorcado-web.git cd juego-ahorcado-web
 
-git clone https://github.com/tuusuario/juego-ahorcado-web.git
-cd juego-ahorcado-web
-
-2. Ejecuta el proyecto con Maven
+3. Ejecuta el proyecto con Maven
 ./mvnw spring-boot:run
 
-3. Abre el navegador
+4. Abre el navegador
 http://localhost:8080
 
 ---
 
-🧪 Cómo jugar
+## 🧪 Cómo jugar
 1. Adivina letras escribiéndolas y haciendo clic en “Adivinar”.
 
 2. Puedes reiniciar el juego con el botón “Reiniciar”.
@@ -67,7 +64,7 @@ http://localhost:8080
    
 ---
 
-🎯 Próximas mejoras (ideas)
+## 🎯 Próximas mejoras (ideas)
 Mostrar imagen del ahorcado según errores
 
 Guardar historial de letras usadas
@@ -80,17 +77,19 @@ Animaciones visuales y sonidos
 
 ---
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 Brayan Sánchez (VRDARK33)
 📧 brayan54sd@gmail.com
 
 
 ---
-📝 Licencia
+
+## 📝 Licencia 
 Este proyecto es de libre uso con fines educativos y profesionales. ¡No olvides dar crédito si te ayudó!
+
 ---
 
-## 📸 Vista previa
+ ## 📸 Vista previa
 
 ![Captura del juego](assets/image.png)
 
