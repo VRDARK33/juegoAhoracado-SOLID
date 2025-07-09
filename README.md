@@ -87,7 +87,6 @@ Brayan Sánchez (VRDARK33)
 
 ---
 
-```markdown
 ## 📸 Vista previa
 
 ![Captura del juego](assets/image.png)
