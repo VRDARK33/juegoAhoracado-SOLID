@@ -86,6 +86,9 @@ Brayan Sánchez (VRDARK33)
 
 
 ---
+📝 Licencia
+Este proyecto es de libre uso con fines educativos y profesionales. ¡No olvides dar crédito si te ayudó!
+---
 
 ## 📸 Vista previa
 
