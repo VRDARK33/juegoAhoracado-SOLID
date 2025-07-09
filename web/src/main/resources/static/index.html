@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego del Ahorcado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1>Juego del Ahorcado</h1>
+    </header>
+
+    <!-- Estado actual del juego -->
+    <section id="estado-juego">
+      <p id="palabraOculta" class="palabra">Cargando...</p>
+      <p class="intentos">Intentos restantes: <span id="intentos">--</span></p>
+      <p id="mensaje" class="mensaje"></p>
+    </section>
+
+    <!-- Entrada de letra -->
+    <section id="entrada-letra">
+      <input type="text" id="letraInput" maxlength="1" placeholder="A" />
+      <button onclick="adivinar()">Adivinar</button>
+      <button onclick="reiniciar()">Reiniciar</button>
+    </section>
+
+    <hr />
+
+    <!-- Personalizar palabra -->
+    <section id="custom-palabra">
+      <h3>Iniciar juego con palabra personalizada</h3>
+      <input type="text" id="palabraCustom" placeholder="palabra secreta" />
+      <button onclick="iniciarConPalabra()">Iniciar con palabra</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desarrollado por VRDARK33 🎮</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function cargarEstado() {
+      fetch('/api/game/estado')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('palabraOculta').innerText = data.palabra;
+          document.getElementById('intentos').innerText = data.intentosRestantes;
+        });
+    }
+
+    function adivinar() {
+      const letra = document.getElementById('letraInput').value;
+      if (!letra) return;
+      fetch('/api/game/adivinar?letra=' + letra, { method: 'POST' })
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('mensaje').innerText = data;
+          document.getElementById('letraInput').value = '';
+          cargarEstado();
+        });
+    }
+
+    function reiniciar() {
+      fetch('/api/game/reiniciar', { method: 'POST' })
+        .then(() => {
+          document.getElementById('mensaje').innerText = 'Juego reiniciado';
+          cargarEstado();
+        });
+    }
+
+    function iniciarConPalabra() {
+      const palabra = document.getElementById('palabraCustom').value;
+      if (!palabra) return;
+      fetch('/api/game/iniciar?palabra=' + palabra, { method: 'POST' })
+        .then(() => {
+          document.getElementById('mensaje').innerText = 'Juego iniciado con palabra personalizada';
+          document.getElementById('palabraCustom').value = '';
+          cargarEstado();
+        });
+    }
+
+    cargarEstado(); // Al cargar la página
+  </script>
+</body>
+</html>
