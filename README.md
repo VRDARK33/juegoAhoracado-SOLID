@@ -87,10 +87,6 @@ Brayan Sánchez (VRDARK33)
 
 ---
 
-✅ **Recuerda**:  
-- Puedes cambiar el enlace del repositorio si lo subiste con otro nombre.  
-- Si quieres, también puedes agregar capturas de pantalla así:
-
 ```markdown
 ## 📸 Vista previa
 
